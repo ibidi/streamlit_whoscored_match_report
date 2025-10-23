@@ -8,6 +8,7 @@ import io
 import matplotlib.pyplot as plt
 import base64
 from datetime import datetime
+from dateutil import parser
 
 # -----------------------
 # Yardımcı Fonksiyonlar
@@ -27,7 +28,7 @@ def fetch_matches_by_month(year_month):
     except Exception:
         return []
 
-from dateutil import parser
+
 def get_all_played_matches():
     months = [
         "202508","202509","202510","202511","202512",
@@ -356,6 +357,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
