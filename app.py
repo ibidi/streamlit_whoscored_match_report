@@ -239,6 +239,8 @@ div[data-testid="stDownloadButton"] > button:active {
 
 matches = get_all_played_matches()
 
+st.write(matches)
+
 if matches:    
     selected_match = st.sidebar.selectbox(
         "Maç Seç",
@@ -354,4 +356,5 @@ st.sidebar.markdown(
     </div>
     """,
     unsafe_allow_html=True
+
 )
