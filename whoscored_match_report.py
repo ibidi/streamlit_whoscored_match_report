@@ -22,6 +22,8 @@ from matplotlib.path import Path
 import base64
 import hashlib
 from bs4 import BeautifulSoup
+import subprocess
+from playwright.sync_api import sync_playwright
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -1466,3 +1468,4 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
     
 
     return final_fig
+
