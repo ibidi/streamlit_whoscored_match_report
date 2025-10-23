@@ -4,7 +4,7 @@ import re
 import csv
 from thefuzz import fuzz
 from dateutil import parser
-from seleniumbase import Driver
+from playwright.sync_api import sync_playwright
 from get_fotmob_headers import headers_leagues
 
 # -----------------------
@@ -28,23 +28,29 @@ def normalize_team_name(name):
     return name.strip()
 
 def fetch_whoscored_matches_by_month(year_month: str):
-    """WhoScored maçlarını SeleniumBase ile çek (debug: içerik print ediliyor)"""
+    """WhoScored maçlarını Playwright ile çek (debug: içerik print ediliyor)"""
     url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
 
     try:
-        # UC moduyla (Undetected ChromeDriver) ve headless çalıştır
-        driver = Driver(uc=True, headless=True)
-        driver.get(url)
-
-        # Sayfa içeriğini al
-        content = driver.page_source
+        with sync_playwright() as p:
+            browser = p.firefox.launch(headless=True)
+            context = browser.new_context(
+                user_agent=(
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/120.0.0.0 Safari/537.36"
+                ),
+                viewport={"width": 1280, "height": 900},
+                locale="tr-TR"
+            )
+            page = context.new_page()
+            page.goto(url, wait_until="networkidle", timeout=120000)  # 2 dk
+            content = page.content()
+            browser.close()
 
         # Debug: sayfa içeriğinin ilk 1000 karakteri
         print(f"[WhoScored debug] Page content snippet ({year_month}):")
         print(content[:1000])
-
-        # Browser kapat
-        driver.quit()
 
         # JSON extraction
         match = re.search(r"({.*})", content, re.DOTALL)
@@ -67,11 +73,7 @@ def fetch_whoscored_matches_by_month(year_month: str):
         return data["tournaments"][0].get("matches", [])
 
     except Exception as e:
-        print(f"[SeleniumBase fetch error] {e}")
-        try:
-            driver.quit()
-        except:
-            pass
+        print(f"[Playwright fetch error] {e}")
         return []
 
 def get_all_whoscored_matches():
