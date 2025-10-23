@@ -23,9 +23,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests thefuzz playwright python-dateutil beautifulsoup4
-        pip install playwright
-        playwright install --with-deps
+        pip install requests thefuzz cloudscraper python-dateutil beautifulsoup4
 
     - name: Run script
       run: |
