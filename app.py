@@ -272,7 +272,8 @@ div[data-testid="stDownloadButton"] > button:active {
 </style>
 """, unsafe_allow_html=True)
 
-matches = get_all_played_matches()
+with st.spinner("📊 Maçlar yükleniyor..."):
+    matches = get_all_played_matches()
 
 if matches:    
     selected_match = st.sidebar.selectbox(
@@ -391,6 +392,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
