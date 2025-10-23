@@ -305,46 +305,43 @@ if matches:
     if whoscored_match_id:
         fotmob_match_id = find_fotmob_match(selected_match)
         if fotmob_match_id:
-            # --- Rapor figürünü al ---
-            # --- Yükleniyor göstergesi ---
-            with st.spinner("📊 Maç raporu hazırlanıyor..."):
-                fig = generate_match_fig(whoscored_match_id, fotmob_match_id)
-
-            if fig:
-                # --- PNG formatına çevir ---
-                buf = io.BytesIO()
-                fig.savefig(buf, format="png", bbox_inches="tight", dpi=150)
-                buf.seek(0)
-
-                img_data = base64.b64encode(buf.getvalue()).decode()
-
-                # --- Streamlit'te küçük gösterim ---
-                html_code = f"""
-                <div style="text-align:center;">
-                    <img src="data:image/png;base64,{img_data}" 
-                        alt="Maç Raporu" 
-                        style="width:65%; height:auto; border-radius:8px;" />
-                </div>
-                """
-                st.markdown(html_code, unsafe_allow_html=True)
-                
-                homeTeamName_replaced = str(homeTeamName).replace(' ', '_')
-                awayTeamName_replaced = str(awayTeamName).replace(' ', '_')
-                match_name_replaced = f"{homeTeamName_replaced}_{awayTeamName_replaced}"
-                date_replaced = formatted_date.replace('.', '_')
-                    
-                file_name = f"{match_name_replaced}_{date_replaced}_Mac_Raporu.png"
-
-                st.download_button(
-                    label="Grafiği İndir",
-                    data=buf,
-                    file_name=file_name,
-                    mime="image/png"
-                )
-
-                # --- Bellek temizliği ---
-                plt.close(fig)
-            
+            # --- Fig ve buf session_state ile saklanacak ---
+            if ("fig_buf" not in st.session_state) or (st.session_state.selected_match != selected_match):
+                with st.spinner("📊 Maç raporu hazırlanıyor..."):
+                    fig = generate_match_fig(whoscored_match_id, fotmob_match_id)
+                    buf = io.BytesIO()
+                    fig.savefig(buf, format="png", bbox_inches="tight", dpi=150)
+                    buf.seek(0)
+                    st.session_state.fig_buf = buf
+                    plt.close(fig)
+            else:
+                buf = st.session_state.fig_buf
+        
+            # --- Base64 ile küçük önizleme ---
+            img_data = base64.b64encode(buf.getvalue()).decode()
+            html_code = f"""
+            <div style="text-align:center;">
+                <img src="data:image/png;base64,{img_data}" 
+                     alt="Maç Raporu" 
+                     style="width:65%; height:auto; border-radius:8px;" />
+            </div>
+            """
+            st.markdown(html_code, unsafe_allow_html=True)
+        
+            # --- Dosya adı ve download butonu ---
+            homeTeamName_replaced = str(homeTeamName).replace(' ', '_')
+            awayTeamName_replaced = str(awayTeamName).replace(' ', '_')
+            match_name_replaced = f"{homeTeamName_replaced}_{awayTeamName_replaced}"
+            date_replaced = formatted_date.replace('.', '_')
+            file_name = f"{match_name_replaced}_{date_replaced}_Mac_Raporu.png"
+        
+            st.download_button(
+                label="Grafiği İndir",
+                data=buf,
+                file_name=file_name,
+                mime="image/png"
+            )
+        
         else:
             st.warning("FotMob maç ID'si bulunamadı.")
 else:
@@ -406,6 +403,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
