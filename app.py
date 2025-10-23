@@ -339,7 +339,7 @@ if matches:
                 )
 
                 # --- Bellek temizliği ---
-                plt.close(fig)
+                plt.close("all")
             
         else:
             st.warning("FotMob maç ID'si bulunamadı.")
@@ -402,6 +402,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
