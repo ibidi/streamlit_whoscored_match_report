@@ -23,7 +23,6 @@ def fetch_matches_by_month(year_month):
         if not data.get("tournaments"):
             return []
         matches = data["tournaments"][0].get("matches", [])
-        st.write(matches)
         return matches
     except Exception:
         return []
@@ -40,6 +39,7 @@ def get_all_played_matches():
 
     for ym in months:
         matches = fetch_matches_by_month(ym)
+        st.write(matches)
         if not matches:
             continue
 
@@ -357,5 +357,6 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
