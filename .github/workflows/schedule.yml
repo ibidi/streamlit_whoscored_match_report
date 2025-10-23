@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests thefuzz dateutil playwright python-dateutil
+        pip install requests thefuzz playwright python-dateutil
         pip install playwright
         playwright install firefox
 
