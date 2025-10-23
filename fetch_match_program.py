@@ -4,20 +4,14 @@ import re
 import csv
 from thefuzz import fuzz
 from dateutil import parser
+from playwright.sync_api import sync_playwright
 import subprocess
-import cloudscraper
 
 from get_fotmob_headers import headers_leagues
 
 # -----------------------
 # Yardımcı Fonksiyonlar
 # -----------------------
-
-def install_playwright_browsers():
-    try:
-        subprocess.check_call(["playwright", "install", "firefox"])
-    except Exception as e:
-        print(f"[Playwright install error] {e}")
 
 def normalize_team_name(name):
     """Takım isimlerini küçük harfe çevir ve Türkçe karakterleri düzelt"""
@@ -39,12 +33,21 @@ def fetch_whoscored_matches_by_month(year_month: str):
     """WhoScored maçlarını Playwright ile çek"""
     url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
 
-    scraper = cloudscraper.create_scraper()
-
     try:
-        response = scraper.get(url)
-        content = response.text
-        
+        with sync_playwright() as p:
+            browser = p.firefox.launch(headless=True)
+            context = browser.new_context(
+                user_agent=(
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/111.0.0.0 Safari/537.36"
+                ), viewport={'width': 1280, 'height': 900}
+            )
+            page = context.new_page()
+            page.goto(url, wait_until="networkidle", timeout=60000)
+            content = page.content()
+            browser.close()
+
         match = re.search(r"({.*})", content, re.DOTALL)
         if not match:
             return []
@@ -55,7 +58,7 @@ def fetch_whoscored_matches_by_month(year_month: str):
 
         return data["tournaments"][0].get("matches", [])
     except Exception as e:
-        print(f"[WhoScored fetch error] {e}")
+        print(f"[Playwright fetch error] {e}")
         return []
 
 def get_all_whoscored_matches():
