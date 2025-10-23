@@ -23,7 +23,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests thefuzz python-dateutil playwright
+        pip install requests thefuzz beautifulsoup4 python-dateutil playwright
 
     - name: Install Playwright browsers
       run: |
