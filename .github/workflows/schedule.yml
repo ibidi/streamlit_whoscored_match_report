@@ -21,11 +21,19 @@ jobs:
       with:
         python-version: "3.11"
 
+    - name: Setup caching for Playwright
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-${{ runner.os }}
+        restore-keys: |
+          playwright-
+          
     - name: Install dependencies
       run: |
         pip install requests thefuzz beautifulsoup4 python-dateutil playwright
 
-    - name: Install Playwright browsers
+    - name: Install Playwright browsers (only if missing)
       run: |
         playwright install --with-deps firefox
 
