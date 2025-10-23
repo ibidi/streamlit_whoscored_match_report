@@ -171,10 +171,6 @@ div[data-testid="stMarkdownContainer"] {
 li[role="option"] {
     font-family: 'Poppins', sans-serif !important;
 }
-li[role="option"]:hover {
-    background: none !important;
-    color: inherit !important;
-}
 </style>
 """, unsafe_allow_html=True)
 
@@ -406,6 +402,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
