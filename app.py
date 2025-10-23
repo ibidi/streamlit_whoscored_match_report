@@ -309,7 +309,7 @@ if matches:
             if fig:
                 # --- PNG formatına çevir ---
                 buf = io.BytesIO()
-                fig.savefig(buf, format="png", bbox_inches="tight", dpi=150)
+                fig.savefig(buf, format="png", bbox_inches="tight", dpi=100)
                 buf.seek(0)
 
                 img_data = base64.b64encode(buf.getvalue()).decode()
@@ -402,6 +402,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
