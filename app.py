@@ -23,6 +23,7 @@ def fetch_matches_by_month(year_month):
         if not data.get("tournaments"):
             return []
         matches = data["tournaments"][0].get("matches", [])
+        st.write("matches")
         return matches
     except Exception:
         return []
@@ -239,8 +240,6 @@ div[data-testid="stDownloadButton"] > button:active {
 
 matches = get_all_played_matches()
 
-st.write(matches)
-
 if matches:    
     selected_match = st.sidebar.selectbox(
         "Maç Seç",
@@ -358,3 +357,4 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
