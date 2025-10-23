@@ -1,0 +1,10 @@
+pandas
+matplotlib
+Pillow
+streamlit
+requests
+bs4
+mplsoccer
+cloudscraper
+highlight_text
+functions
