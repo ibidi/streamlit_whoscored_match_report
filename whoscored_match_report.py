@@ -163,7 +163,6 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
         except Exception as e:
             st.write(f"[Playwright install error] {e}")
     
-    @st.cache_data(ttl=600)
     def fetch_whoscored_live_page(whoscored_match_id: int):
         url = f"https://www.whoscored.com/Matches/{whoscored_match_id}/Live"
         
@@ -1468,4 +1467,5 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
     
 
     return final_fig
+
 
