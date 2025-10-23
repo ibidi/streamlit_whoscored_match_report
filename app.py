@@ -9,23 +9,58 @@ import matplotlib.pyplot as plt
 import base64
 from datetime import datetime
 from dateutil import parser
+from playwright.sync_api import sync_playwright
+import subprocess
+import json
+import re
 
 # -----------------------
 # Yardımcı Fonksiyonlar
 # -----------------------
 
-def fetch_matches_by_month(year_month):
-    url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
+def install_playwright_browsers():
     try:
-        scraper = cloudscraper.create_scraper()
-        r = scraper.get(url, headers={"User-Agent": "Mozilla/5.0"})
-        r.raise_for_status()
-        data = r.json()
+        subprocess.check_call(["playwright", "install", "firefox"])
+    except Exception as e:
+        st.write(f"[Playwright install error] {e}")
+
+@st.cache_data(ttl=600)
+def fetch_matches_by_month_playwright(year_month: str):
+    url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
+
+    try:
+        install_playwright_browsers()
+
+        with sync_playwright() as p:
+            browser = p.firefox.launch(headless=True)
+            context = browser.new_context(
+                user_agent=(
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/111.0.0.0 Safari/537.36"
+                )
+            )
+            page = context.new_page()
+            page.goto(url, wait_until="networkidle")
+
+            # JS render edilmiş content çek
+            content = page.content()
+            browser.close()
+
+        # JSON'u script tag'inden çek
+        # WhoScored data genelde window.__data=... formatında
+        match = re.search(r"({.*})", content, re.DOTALL)
+        if not match:
+            return []
+
+        data = json.loads(match.group(1))
+
         if not data.get("tournaments"):
             return []
-        matches = data["tournaments"][0].get("matches", [])
-        return matches
-    except Exception:
+        return data["tournaments"][0].get("matches", [])
+
+    except Exception as e:
+        st.write(f"[Playwright fetch error] {e}")
         return []
 
 
@@ -39,7 +74,7 @@ def get_all_played_matches():
     stop = False
 
     for ym in months:
-        matches = fetch_matches_by_month(ym)
+        matches = fetch_matches_by_month_playwright(ym)
         if not matches:
             continue
 
@@ -357,6 +392,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
