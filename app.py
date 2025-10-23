@@ -18,20 +18,12 @@ import re
 # Yardımcı Fonksiyonlar
 # -----------------------
 
-def install_playwright_browsers():
-    try:
-        subprocess.check_call(["playwright", "install", "firefox"])
-    except Exception as e:
-        st.write(f"[Playwright install error] {e}")
-
 def fetch_matches_by_month_playwright(year_month: str):
     url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
 
     try:
-        install_playwright_browsers()
-
         with sync_playwright() as p:
-            browser = p.firefox.launch(headless=True)
+            browser = p.firefox.launch(headless=False)
             context = browser.new_context(
                 user_agent=(
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -406,6 +398,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
