@@ -272,16 +272,25 @@ div[data-testid="stDownloadButton"] > button:active {
 </style>
 """, unsafe_allow_html=True)
 
+@st.cache_data
+def get_all_played_matches_cached():
+    return get_all_played_matches()
+
 with st.sidebar:
     with st.spinner("📊 Maçlar yükleniyor..."):
-        matches = get_all_played_matches()
+        matches = get_all_played_matches_cached()
 
-if matches:    
+if matches:   
+    if "selected_match" not in st.session_state:
+        st.session_state.selected_match = matches[0]
+        
     selected_match = st.sidebar.selectbox(
         "Maç Seç",
         options=matches,
         format_func=lambda m: f"{m['homeTeamName']} vs {m['awayTeamName']}"
     )
+    st.session_state.selected_match = selected_match
+    
     homeTeamName = selected_match['homeTeamName']
     awayTeamName = selected_match['awayTeamName']
     formatted_date = datetime.strptime(
@@ -393,6 +402,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
