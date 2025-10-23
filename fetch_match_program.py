@@ -30,7 +30,7 @@ def normalize_team_name(name):
     return name.strip()
 
 def fetch_whoscored_matches_by_month(year_month: str):
-    """WhoScored maçlarını Playwright ile çek"""
+    """WhoScored maçlarını Playwright ile çek (debug: içerik print ediliyor)"""
     url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
 
     try:
@@ -50,16 +50,30 @@ def fetch_whoscored_matches_by_month(year_month: str):
             content = page.content()
             browser.close()
 
+        # Debug: sayfa içeriğinin ilk 1000 karakteri
+        print(f"[WhoScored debug] Page content snippet ({year_month}):")
+        print(content[:1000])
+
+        # JSON extraction
         match = re.search(r"({.*})", content, re.DOTALL)
         if not match:
             print(f"[WhoScored fetch error] JSON not found for {year_month}")
             return []
 
-        data = json.loads(match.group(1))
+        try:
+            data = json.loads(match.group(1))
+        except json.JSONDecodeError as je:
+            print(f"[WhoScored fetch error] JSON decode error: {je}")
+            # debug için içerik snippet
+            print(f"Content snippet for JSON decode: {content[:500]} ...")
+            return []
+
         if not data.get("tournaments"):
+            print(f"[WhoScored fetch error] No tournaments key for {year_month}")
             return []
 
         return data["tournaments"][0].get("matches", [])
+
     except Exception as e:
         print(f"[Playwright fetch error] {e}")
         return []
