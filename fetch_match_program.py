@@ -31,6 +31,21 @@ def fetch_whoscored_matches_by_month(year_month: str):
     """WhoScored maçlarını Playwright ile çek (debug: içerik print ediliyor)"""
     url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
 
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
+        'cache-control': 'no-cache',
+        'pragma': 'no-cache',
+        'priority': 'u=1, i',
+        'referer': 'https://www.whoscored.com/regions/225/tournaments/17/seasons/10807/stages/24627/fixtures/turkey-super-lig-2025-2026',
+        'sec-ch-ua': '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+    }
+    
     try:
         with sync_playwright() as p:
             browser = p.firefox.launch(headless=True)
@@ -41,7 +56,8 @@ def fetch_whoscored_matches_by_month(year_month: str):
                     "Chrome/120.0.0.0 Safari/537.36"
                 ),
                 viewport={"width": 1280, "height": 900},
-                locale="tr-TR"
+                locale="tr-TR",
+                extra_http_headers=headers
             )
             page = context.new_page()
             page.goto(url, wait_until="networkidle", timeout=120000)  # 2 dk
