@@ -24,7 +24,6 @@ def install_playwright_browsers():
     except Exception as e:
         st.write(f"[Playwright install error] {e}")
 
-@st.cache_data(ttl=600)
 def fetch_matches_by_month_playwright(year_month: str):
     url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
 
@@ -392,6 +391,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
