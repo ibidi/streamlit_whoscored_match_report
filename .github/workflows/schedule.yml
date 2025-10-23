@@ -21,9 +21,28 @@ jobs:
       with:
         python-version: "3.11"
 
+    # Playwright tarayıcı cache
+    - name: Setup caching for Playwright
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-${{ runner.os }}
+        restore-keys: |
+          playwright-
+
     - name: Install dependencies
       run: |
-        pip install requests thefuzz beautifulsoup4 python-dateutil seleniumbase
+        pip install requests thefuzz beautifulsoup4 python-dateutil playwright
+
+    # Tarayıcı eksikse kur
+    - name: Install Playwright browsers (only if missing)
+      run: |
+        if ! ls ~/.cache/ms-playwright | grep firefox; then
+          echo "Firefox missing, installing..."
+          playwright install --with-deps firefox
+        else
+          echo "Firefox already cached."
+        fi
 
     - name: Run script
       run: |
