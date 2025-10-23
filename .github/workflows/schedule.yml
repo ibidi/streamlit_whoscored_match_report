@@ -21,6 +21,9 @@ jobs:
       with:
         python-version: "3.11"
 
+    - name: Install apt packages
+      run: sudo xargs -a packages.txt apt-get install -y
+
     - name: Install dependencies
       run: |
         pip install requests thefuzz playwright python-dateutil beautifulsoup4
