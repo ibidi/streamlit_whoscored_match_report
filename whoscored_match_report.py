@@ -155,9 +155,42 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
     result_string = f"{homeTeamName} {result} {awayTeamName}"
     matchDetailString = f"{leagueString}  |  {weekString}"
 
-    scraper = cloudscraper.create_scraper()
-    response = scraper.get(f'https://www.whoscored.com/Matches/{whoscored_match_id}/Live')
-    response_text = response.text
+    def install_playwright_browsers():
+        try:
+            subprocess.check_call(["playwright", "install", "firefox"])
+        except Exception as e:
+            st.write(f"[Playwright install error] {e}")
+    
+    @st.cache_data(ttl=600)
+    def fetch_whoscored_live_page(whoscored_match_id: int):
+        url = f"https://www.whoscored.com/Matches/{whoscored_match_id}/Live"
+        
+        try:
+            install_playwright_browsers()
+    
+            with sync_playwright() as p:
+                browser = p.firefox.launch(headless=True)
+                context = browser.new_context(
+                    user_agent=(
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) "
+                        "Chrome/111.0.0.0 Safari/537.36"
+                    )
+                )
+                page = context.new_page()
+                page.goto(url, wait_until="networkidle")
+    
+                # HTML dump
+                html = page.content()
+    
+                browser.close()
+                return html
+    
+        except Exception as e:
+            st.write(f"[Playwright fetch error] {e}")
+            return None
+
+    response_text = fetch_whoscored_live_page(whoscored_match_id)
 
     def extract_json_from_html(response_text):  
         # JSON formatını yakalamak için regex kalıbı
@@ -1431,4 +1464,5 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
 
     final_fig = generate_and_save_figure()
     
+
     return final_fig
