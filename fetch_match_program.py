@@ -40,16 +40,19 @@ def fetch_whoscored_matches_by_month(year_month: str):
                 user_agent=(
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                     "AppleWebKit/537.36 (KHTML, like Gecko) "
-                    "Chrome/111.0.0.0 Safari/537.36"
-                ), viewport={'width': 1280, 'height': 900}
+                    "Chrome/120.0.0.0 Safari/537.36"
+                ),
+                viewport={"width": 1280, "height": 900},
+                locale="tr-TR"
             )
             page = context.new_page()
-            page.goto(url, wait_until="networkidle", timeout=60000)
+            page.goto(url, wait_until="networkidle", timeout=120000)  # 2 dk
             content = page.content()
             browser.close()
 
         match = re.search(r"({.*})", content, re.DOTALL)
         if not match:
+            print(f"[WhoScored fetch error] JSON not found for {year_month}")
             return []
 
         data = json.loads(match.group(1))
