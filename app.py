@@ -272,7 +272,7 @@ div[data-testid="stDownloadButton"] > button:active {
 </style>
 """, unsafe_allow_html=True)
 
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def get_all_played_matches_cached():
     return get_all_played_matches()
 
@@ -302,9 +302,12 @@ if matches:
         fotmob_match_id = find_fotmob_match(selected_match)
         if fotmob_match_id:
             # --- Rapor figürünü al ---
+            @st.cache_data(show_spinner=False)
+            def generate_match_fig(whoscored_match_id, fotmob_match_id):
+                return whoscored_match_report(whoscored_match_id, fotmob_match_id)
             # --- Yükleniyor göstergesi ---
             with st.spinner("📊 Maç raporu hazırlanıyor..."):
-                fig = whoscored_match_report(whoscored_match_id, fotmob_match_id)
+                fig = generate_match_fig(whoscored_match_id, fotmob_match_id)
 
             if fig:
                 # --- PNG formatına çevir ---
@@ -402,6 +405,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
