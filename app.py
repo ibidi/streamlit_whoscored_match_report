@@ -272,7 +272,7 @@ div[data-testid="stDownloadButton"] > button:active {
 </style>
 """, unsafe_allow_html=True)
 
-with st.spinner("📊 Maçlar yükleniyor..."):
+with st.sidebar.spinner("📊 Maçlar yükleniyor..."):
     matches = get_all_played_matches()
 
 if matches:    
@@ -392,6 +392,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
