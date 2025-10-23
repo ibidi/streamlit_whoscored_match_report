@@ -5,6 +5,7 @@ import csv
 from thefuzz import fuzz
 from dateutil import parser
 import subprocess
+import cloudscraper
 
 from get_fotmob_headers import headers_leagues
 
