@@ -39,7 +39,6 @@ def get_all_played_matches():
 
     for ym in months:
         matches = fetch_matches_by_month(ym)
-        st.write(matches)
         if not matches:
             continue
 
@@ -52,7 +51,7 @@ def get_all_played_matches():
 
         if stop:
             break
-
+    st.write(all_matches)
     all_matches.sort(
         key=lambda x: parser.parse(x.get("startTimeUtc") or x.get("startTime")),
         reverse=True
@@ -357,6 +356,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
