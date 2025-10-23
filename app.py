@@ -281,11 +281,15 @@ with st.sidebar:
         matches = get_all_played_matches_cached()
 
 if matches:   
+    if "selected_match" not in st.session_state:
+        st.session_state.selected_match = matches[0]
+        
     selected_match = st.sidebar.selectbox(
         "Maç Seç",
         options=matches,
         format_func=lambda m: f"{m['homeTeamName']} vs {m['awayTeamName']}"
     )
+    st.session_state.selected_match = selected_match
     
     homeTeamName = selected_match['homeTeamName']
     awayTeamName = selected_match['awayTeamName']
@@ -398,6 +402,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
