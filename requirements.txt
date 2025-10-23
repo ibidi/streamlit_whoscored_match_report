@@ -10,4 +10,5 @@ numpy
 Pillow
 highlight-text
 unidecode
+functions
 playwright
