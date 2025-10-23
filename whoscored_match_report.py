@@ -24,6 +24,7 @@ import hashlib
 from bs4 import BeautifulSoup
 import subprocess
 from playwright.sync_api import sync_playwright
+import streamlit as st
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -162,7 +163,8 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
             subprocess.check_call(["playwright", "install", "firefox"])
         except Exception as e:
             st.write(f"[Playwright install error] {e}")
-    
+
+    @st.cache_data(ttl=600)
     def fetch_whoscored_live_page(whoscored_match_id: int):
         url = f"https://www.whoscored.com/Matches/{whoscored_match_id}/Live"
         
@@ -1467,5 +1469,6 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
     
 
     return final_fig
+
 
 
