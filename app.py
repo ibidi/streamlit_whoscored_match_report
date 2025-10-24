@@ -261,7 +261,7 @@ if not matches.empty:
                 match_name_replaced = f"{homeTeamName_replaced}_{awayTeamName_replaced}"
                 date_replaced = formatted_date.replace('.', '_')
                     
-                file_name = f"{match_name_replaced}_{date_replaced}_Mac_Raporu.png"
+                file_name = f"{match_name_replaced}_{date_replaced}_Maç_Raporu.png"
 
                 st.download_button(
                     label="Grafiği İndir",
@@ -332,6 +332,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
