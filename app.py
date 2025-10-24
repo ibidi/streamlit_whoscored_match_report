@@ -154,6 +154,11 @@ st.markdown(
                 padding-right: 10px;
             }
         }
+
+        [data-testid="stSidebar"] {{
+            width: 350px;
+            min-width: 350px;
+        }}
     </style>
     """,
     unsafe_allow_html=True
@@ -328,5 +333,6 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
