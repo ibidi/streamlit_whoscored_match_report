@@ -219,7 +219,7 @@ if not matches.empty:
     selected_match = st.sidebar.selectbox(
         "Maç Seç",
         options=matches.to_dict("records"),
-        format_func=lambda m: f"{m['week']. Hafta} | {m['homeName']}-{m['awayName']}"
+        format_func=lambda m: f"{m['week']}. Hafta | {m['homeName']}-{m['awayName']}"
     )
     st.session_state.selected_match = selected_match
     
@@ -328,4 +328,5 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
