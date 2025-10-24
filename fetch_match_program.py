@@ -31,32 +31,31 @@ def normalize_team_name(name):
 # -----------------------
 
 def get_whoscored_matches_by_months():
-    # Çekilecek aylar
     months = [
         "202508","202509","202510","202511","202512",
         "202601","202602","202603","202604","202605"
     ]
-    
-    # Ana fixtures sayfası
-    page_url = "https://www.whoscored.com/tournaments/24627/fixtures/turkey-super-lig-2025-2026"
 
+    page_url = "https://www.whoscored.com/tournaments/24627/fixtures/turkey-super-lig-2025-2026"
     collected = []
 
     with sync_playwright() as p:
-        browser = p.firefox.launch(headless=False)
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--disable-gpu", "--no-sandbox"]
+        )
         context = browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
                 "Chrome/120.0.0.0 Safari/537.36"
             ),
-            viewport={"width": 1440, "height": 900},
+            viewport={"width": 1280, "height": 900},
             locale="tr-TR"
         )
 
         page = context.new_page()
 
-        # JSON intercept handler
         def handle_response(response):
             url = response.url
             if "/tournaments/24627/data/?d=" in url:
@@ -71,19 +70,18 @@ def get_whoscored_matches_by_months():
 
         page.on("response", handle_response)
 
-        # Sayfa açılır, Cloudflare cookie verilir
         page.goto(page_url, wait_until="networkidle", timeout=60000)
-        page.wait_for_timeout(4000)
+        page.wait_for_timeout(6000)  # ✅ Cloudflare cookie süresi
 
-        # JSON endpoint'lerini tetikle
         for ym in months:
             api_url = f"https://www.whoscored.com/tournaments/24627/data/?d={ym}&isAggregate=false"
             page.evaluate(f"fetch('{api_url}')")
-            page.wait_for_timeout(1500)
+            page.wait_for_timeout(1200)
 
         browser.close()
 
     return collected
+
 
 # -----------------------
 # FotMob Fetch
