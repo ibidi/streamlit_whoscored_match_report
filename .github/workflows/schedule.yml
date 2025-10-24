@@ -3,7 +3,7 @@ name: Run Match Fetcher
 on:
   schedule:
     - cron: "0 * * * *"  # her saat başı
-  workflow_dispatch:      # manuel çalışma
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -26,25 +26,27 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.cache/ms-playwright
-        key: playwright-${{ runner.os }}
+        key: playwright-chromium-${{ runner.os }}
         restore-keys: |
-          playwright-
+          playwright-chromium-
 
     - name: Install dependencies
       run: |
         pip install requests thefuzz beautifulsoup4 python-dateutil playwright
 
-    # Tarayıcı eksikse kur
-    - name: Install Playwright browsers (only if missing)
+    # Chromium eksikse kur
+    - name: Install Playwright Chromium (only if missing)
       run: |
-        if ! ls ~/.cache/ms-playwright | grep firefox; then
-          echo "Firefox missing, installing..."
-          playwright install --with-deps firefox
+        if ! ls ~/.cache/ms-playwright | grep chromium; then
+          echo "Chromium missing, installing..."
+          playwright install --with-deps chromium
         else
-          echo "Firefox already cached."
+          echo "Chromium already cached."
         fi
 
     - name: Run script
+      env:
+        PLAYWRIGHT_BROWSERS_PATH: ~/.cache/ms-playwright
       run: |
         python fetch_match_program.py || echo "[Script crashed]"
 
