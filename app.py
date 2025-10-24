@@ -136,8 +136,8 @@ st.markdown(
                 max-width: 1000px;
             }
             [data-testid="stSidebar"] {
-                width: 450px !important;
-                min-width: 450px !important;
+                width: 400px !important;
+                min-width: 400px !important;
             }
         }
 
@@ -332,6 +332,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
