@@ -1,0 +1,307 @@
+﻿week,utcTime,homeName,awayName,matchName,fotmobId,whoscoredId
+34,2026-05-17T17:00:00Z,Trabzonspor,Gençlerbirliği,Trabzonspor - Gençlerbirliği,4842620,1915523
+34,2026-05-17T17:00:00Z,Samsunspor,Göztepe,Samsunspor - Göztepe,4842619,1915521
+34,2026-05-17T17:00:00Z,Rizespor,Beşiktaş,Rizespor - Beşiktaş,4842618,1915518
+34,2026-05-17T17:00:00Z,Kayserispor,Konyaspor,Kayserispor - Konyaspor,4842617,1915517
+34,2026-05-17T17:00:00Z,Kasımpaşa,Galatasaray,Kasımpaşa - Galatasaray,4842616,1915516
+34,2026-05-17T17:00:00Z,Gaziantep FK,Başakşehir,Gaziantep FK - Başakşehir,4842614,1915513
+34,2026-05-17T17:00:00Z,Fenerbahçe,Eyüpspor,Fenerbahçe - Eyüpspor,4842613,1915512
+34,2026-05-17T17:00:00Z,Fatih Karagümrük,Alanyaspor,Fatih Karagümrük - Alanyaspor,4842615,1915514
+34,2026-05-17T17:00:00Z,Antalyaspor,Kocaelispor,Antalyaspor - Kocaelispor,4842612,1915511
+33,2026-05-10T17:00:00Z,Konyaspor,Fenerbahçe,Konyaspor - Fenerbahçe,4842611,1915510
+33,2026-05-10T17:00:00Z,Kocaelispor,Fatih Karagümrük,Kocaelispor - Fatih Karagümrük,4842610,1915509
+33,2026-05-10T17:00:00Z,Başakşehir,Samsunspor,Başakşehir - Samsunspor,4842604,1915499
+33,2026-05-10T17:00:00Z,Göztepe,Gaziantep FK,Göztepe - Gaziantep FK,4842609,1915508
+33,2026-05-10T17:00:00Z,Gençlerbirliği,Kasımpaşa,Gençlerbirliği - Kasımpaşa,4842608,1915506
+33,2026-05-10T17:00:00Z,Galatasaray,Antalyaspor,Galatasaray - Antalyaspor,4842607,1915505
+33,2026-05-10T17:00:00Z,Eyüpspor,Rizespor,Eyüpspor - Rizespor,4842606,1915503
+33,2026-05-10T17:00:00Z,Beşiktaş,Trabzonspor,Beşiktaş - Trabzonspor,4842605,1915501
+33,2026-05-10T17:00:00Z,Alanyaspor,Kayserispor,Alanyaspor - Kayserispor,4842603,1915497
+32,2026-05-03T17:00:00Z,Trabzonspor,Göztepe,Trabzonspor - Göztepe,4842602,1915495
+32,2026-05-03T17:00:00Z,Samsunspor,Galatasaray,Samsunspor - Galatasaray,4842601,1915493
+32,2026-05-03T17:00:00Z,Rizespor,Konyaspor,Rizespor - Konyaspor,4842600,1915491
+32,2026-05-03T17:00:00Z,Kayserispor,Eyüpspor,Kayserispor - Eyüpspor,4842599,1915489
+32,2026-05-03T17:00:00Z,Kasımpaşa,Kocaelispor,Kasımpaşa - Kocaelispor,4842598,1915486
+32,2026-05-03T17:00:00Z,Gaziantep FK,Beşiktaş,Gaziantep FK - Beşiktaş,4842596,1915480
+32,2026-05-03T17:00:00Z,Fenerbahçe,Başakşehir,Fenerbahçe - Başakşehir,4842595,1915478
+32,2026-05-03T17:00:00Z,Fatih Karagümrük,Gençlerbirliği,Fatih Karagümrük - Gençlerbirliği,4842597,1915484
+32,2026-05-03T17:00:00Z,Antalyaspor,Alanyaspor,Antalyaspor - Alanyaspor,4842594,1915476
+31,2026-04-26T17:00:00Z,Konyaspor,Trabzonspor,Konyaspor - Trabzonspor,4842593,1915473
+31,2026-04-26T17:00:00Z,Kayserispor,Rizespor,Kayserispor - Rizespor,4842592,1915471
+31,2026-04-26T17:00:00Z,Başakşehir,Kasımpaşa,Başakşehir - Kasımpaşa,4842586,1915456
+31,2026-04-26T17:00:00Z,Göztepe,Antalyaspor,Göztepe - Antalyaspor,4842591,1915468
+31,2026-04-26T17:00:00Z,Gençlerbirliği,Kocaelispor,Gençlerbirliği - Kocaelispor,4842590,1915465
+31,2026-04-26T17:00:00Z,Galatasaray,Fenerbahçe,Galatasaray - Fenerbahçe,4842589,1915463
+31,2026-04-26T17:00:00Z,Eyüpspor,Gaziantep FK,Eyüpspor - Gaziantep FK,4842588,1915460
+31,2026-04-26T17:00:00Z,Beşiktaş,Fatih Karagümrük,Beşiktaş - Fatih Karagümrük,4842587,1915458
+31,2026-04-26T17:00:00Z,Alanyaspor,Samsunspor,Alanyaspor - Samsunspor,4842585,1915454
+30,2026-04-19T17:00:00Z,Trabzonspor,Başakşehir,Trabzonspor - Başakşehir,4842584,1915452
+30,2026-04-19T17:00:00Z,Samsunspor,Beşiktaş,Samsunspor - Beşiktaş,4842583,1915450
+30,2026-04-19T17:00:00Z,Kocaelispor,Göztepe,Kocaelispor - Göztepe,4842582,1915448
+30,2026-04-19T17:00:00Z,Kasımpaşa,Alanyaspor,Kasımpaşa - Alanyaspor,4842581,1915446
+30,2026-04-19T17:00:00Z,Gençlerbirliği,Galatasaray,Gençlerbirliği - Galatasaray,4842579,1915442
+30,2026-04-19T17:00:00Z,Gaziantep FK,Kayserispor,Gaziantep FK - Kayserispor,4842578,1915439
+30,2026-04-19T17:00:00Z,Fenerbahçe,Rizespor,Fenerbahçe - Rizespor,4842577,1915437
+30,2026-04-19T17:00:00Z,Fatih Karagümrük,Eyüpspor,Fatih Karagümrük - Eyüpspor,4842580,1915444
+30,2026-04-19T17:00:00Z,Antalyaspor,Konyaspor,Antalyaspor - Konyaspor,4842576,1915435
+29,2026-04-12T17:00:00Z,Rizespor,Gaziantep FK,Rizespor - Gaziantep FK,4842575,1915433
+29,2026-04-12T17:00:00Z,Konyaspor,Fatih Karagümrük,Konyaspor - Fatih Karagümrük,4842574,1915431
+29,2026-04-12T17:00:00Z,Kayserispor,Fenerbahçe,Kayserispor - Fenerbahçe,4842573,1915428
+29,2026-04-12T17:00:00Z,Başakşehir,Gençlerbirliği,Başakşehir - Gençlerbirliği,4842568,1915418
+29,2026-04-12T17:00:00Z,Göztepe,Kasımpaşa,Göztepe - Kasımpaşa,4842572,1915426
+29,2026-04-12T17:00:00Z,Galatasaray,Kocaelispor,Galatasaray - Kocaelispor,4842571,1915424
+29,2026-04-12T17:00:00Z,Eyüpspor,Samsunspor,Eyüpspor - Samsunspor,4842570,1915422
+29,2026-04-12T17:00:00Z,Beşiktaş,Antalyaspor,Beşiktaş - Antalyaspor,4842569,1915420
+29,2026-04-12T17:00:00Z,Alanyaspor,Trabzonspor,Alanyaspor - Trabzonspor,4842567,1915416
+28,2026-04-05T17:00:00Z,Trabzonspor,Galatasaray,Trabzonspor - Galatasaray,4842566,1915415
+28,2026-04-05T17:00:00Z,Samsunspor,Konyaspor,Samsunspor - Konyaspor,4842565,1915413
+28,2026-04-05T17:00:00Z,Kocaelispor,Başakşehir,Kocaelispor - Başakşehir,4842564,1915411
+28,2026-04-05T17:00:00Z,Kasımpaşa,Kayserispor,Kasımpaşa - Kayserispor,4842563,1915540
+28,2026-04-05T17:00:00Z,Gençlerbirliği,Göztepe,Gençlerbirliği - Göztepe,4842561,1915538
+28,2026-04-05T17:00:00Z,Gaziantep FK,Alanyaspor,Gaziantep FK - Alanyaspor,4842560,1915537
+28,2026-04-05T17:00:00Z,Fenerbahçe,Beşiktaş,Fenerbahçe - Beşiktaş,4842559,1915536
+28,2026-04-05T17:00:00Z,Fatih Karagümrük,Rizespor,Fatih Karagümrük - Rizespor,4842562,1915539
+28,2026-04-05T17:00:00Z,Antalyaspor,Eyüpspor,Antalyaspor - Eyüpspor,4842558,1915535
+27,2026-03-22T18:00:00Z,Rizespor,Samsunspor,Rizespor - Samsunspor,4842557,1915534
+27,2026-03-22T18:00:00Z,Konyaspor,Gençlerbirliği,Konyaspor - Gençlerbirliği,4842556,1915533
+27,2026-03-22T18:00:00Z,Kayserispor,Fatih Karagümrük,Kayserispor - Fatih Karagümrük,4842555,1915532
+27,2026-03-22T18:00:00Z,Başakşehir,Antalyaspor,Başakşehir - Antalyaspor,4842550,1915527
+27,2026-03-22T18:00:00Z,Göztepe,Galatasaray,Göztepe - Galatasaray,4842554,1915531
+27,2026-03-22T18:00:00Z,Fenerbahçe,Gaziantep FK,Fenerbahçe - Gaziantep FK,4842553,1915530
+27,2026-03-22T18:00:00Z,Eyüpspor,Trabzonspor,Eyüpspor - Trabzonspor,4842552,1915529
+27,2026-03-22T18:00:00Z,Beşiktaş,Kasımpaşa,Beşiktaş - Kasımpaşa,4842551,1915528
+27,2026-03-22T18:00:00Z,Alanyaspor,Kocaelispor,Alanyaspor - Kocaelispor,4842549,1915526
+26,2026-03-15T18:00:00Z,Trabzonspor,Rizespor,Trabzonspor - Rizespor,4842548,1915525
+26,2026-03-15T18:00:00Z,Samsunspor,Kayserispor,Samsunspor - Kayserispor,4842547,1915524
+26,2026-03-15T18:00:00Z,Kocaelispor,Konyaspor,Kocaelispor - Konyaspor,4842546,1915522
+26,2026-03-15T18:00:00Z,Kasımpaşa,Eyüpspor,Kasımpaşa - Eyüpspor,4842545,1915520
+26,2026-03-15T18:00:00Z,Göztepe,Alanyaspor,Göztepe - Alanyaspor,4842543,1915515
+26,2026-03-15T18:00:00Z,Gençlerbirliği,Beşiktaş,Gençlerbirliği - Beşiktaş,4842542,1915507
+26,2026-03-15T18:00:00Z,Galatasaray,Başakşehir,Galatasaray - Başakşehir,4842541,1915504
+26,2026-03-15T18:00:00Z,Fatih Karagümrük,Fenerbahçe,Fatih Karagümrük - Fenerbahçe,4842544,1915519
+26,2026-03-15T18:00:00Z,Antalyaspor,Gaziantep FK,Antalyaspor - Gaziantep FK,4842540,1915502
+25,2026-03-08T18:00:00Z,Rizespor,Antalyaspor,Rizespor - Antalyaspor,4842539,1915500
+25,2026-03-08T18:00:00Z,Konyaspor,Kasımpaşa,Konyaspor - Kasımpaşa,4842538,1915498
+25,2026-03-08T18:00:00Z,Kayserispor,Trabzonspor,Kayserispor - Trabzonspor,4842537,1915496
+25,2026-03-08T18:00:00Z,Başakşehir,Göztepe,Başakşehir - Göztepe,4842532,1915487
+25,2026-03-08T18:00:00Z,Gaziantep FK,Fatih Karagümrük,Gaziantep FK - Fatih Karagümrük,4842536,1915494
+25,2026-03-08T18:00:00Z,Fenerbahçe,Samsunspor,Fenerbahçe - Samsunspor,4842535,1915492
+25,2026-03-08T18:00:00Z,Eyüpspor,Kocaelispor,Eyüpspor - Kocaelispor,4842534,1915490
+25,2026-03-08T18:00:00Z,Beşiktaş,Galatasaray,Beşiktaş - Galatasaray,4842533,1915488
+25,2026-03-08T18:00:00Z,Alanyaspor,Gençlerbirliği,Alanyaspor - Gençlerbirliği,4842531,1915483
+24,2026-03-01T18:00:00Z,Trabzonspor,Fatih Karagümrük,Trabzonspor - Fatih Karagümrük,4842530,1915481
+24,2026-03-01T18:00:00Z,Samsunspor,Gaziantep FK,Samsunspor - Gaziantep FK,4842529,1915475
+24,2026-03-01T18:00:00Z,Kocaelispor,Beşiktaş,Kocaelispor - Beşiktaş,4842528,1915470
+24,2026-03-01T18:00:00Z,Kasımpaşa,Rizespor,Kasımpaşa - Rizespor,4842527,1915467
+24,2026-03-01T18:00:00Z,Başakşehir,Konyaspor,Başakşehir - Konyaspor,4842523,1915459
+24,2026-03-01T18:00:00Z,Göztepe,Eyüpspor,Göztepe - Eyüpspor,4842526,1915466
+24,2026-03-01T18:00:00Z,Gençlerbirliği,Kayserispor,Gençlerbirliği - Kayserispor,4842525,1915464
+24,2026-03-01T18:00:00Z,Galatasaray,Alanyaspor,Galatasaray - Alanyaspor,4842524,1915461
+24,2026-03-01T18:00:00Z,Antalyaspor,Fenerbahçe,Antalyaspor - Fenerbahçe,4842522,1915457
+23,2026-02-22T18:00:00Z,Rizespor,Kocaelispor,Rizespor - Kocaelispor,4842521,1915455
+23,2026-02-22T18:00:00Z,Konyaspor,Galatasaray,Konyaspor - Galatasaray,4842520,1915453
+23,2026-02-22T18:00:00Z,Kayserispor,Antalyaspor,Kayserispor - Antalyaspor,4842519,1915451
+23,2026-02-22T18:00:00Z,Gaziantep FK,Trabzonspor,Gaziantep FK - Trabzonspor,4842517,1915447
+23,2026-02-22T18:00:00Z,Fenerbahçe,Kasımpaşa,Fenerbahçe - Kasımpaşa,4842516,1915445
+23,2026-02-22T18:00:00Z,Fatih Karagümrük,Samsunspor,Fatih Karagümrük - Samsunspor,4842518,1915449
+23,2026-02-22T18:00:00Z,Eyüpspor,Gençlerbirliği,Eyüpspor - Gençlerbirliği,4842515,1915443
+23,2026-02-22T18:00:00Z,Beşiktaş,Göztepe,Beşiktaş - Göztepe,4842514,1915441
+23,2026-02-22T18:00:00Z,Alanyaspor,Başakşehir,Alanyaspor - Başakşehir,4842513,1915438
+22,2026-02-15T18:00:00Z,Trabzonspor,Fenerbahçe,Trabzonspor - Fenerbahçe,4842512,1915436
+22,2026-02-15T18:00:00Z,Kocaelispor,Gaziantep FK,Kocaelispor - Gaziantep FK,4842511,1915434
+22,2026-02-15T18:00:00Z,Kasımpaşa,Fatih Karagümrük,Kasımpaşa - Fatih Karagümrük,4842510,1915432
+22,2026-02-15T18:00:00Z,Başakşehir,Beşiktaş,Başakşehir - Beşiktaş,4842506,1915423
+22,2026-02-15T18:00:00Z,Göztepe,Kayserispor,Göztepe - Kayserispor,4842509,1915430
+22,2026-02-15T18:00:00Z,Gençlerbirliği,Rizespor,Gençlerbirliği - Rizespor,4842508,1915427
+22,2026-02-15T18:00:00Z,Galatasaray,Eyüpspor,Galatasaray - Eyüpspor,4842507,1915425
+22,2026-02-15T18:00:00Z,Antalyaspor,Samsunspor,Antalyaspor - Samsunspor,4842505,1915485
+22,2026-02-15T18:00:00Z,Alanyaspor,Konyaspor,Alanyaspor - Konyaspor,4842504,1915482
+21,2026-02-08T18:00:00Z,Samsunspor,Trabzonspor,Samsunspor - Trabzonspor,4842503,1915479
+21,2026-02-08T18:00:00Z,Rizespor,Galatasaray,Rizespor - Galatasaray,4842502,1915477
+21,2026-02-08T18:00:00Z,Konyaspor,Göztepe,Konyaspor - Göztepe,4842501,1915474
+21,2026-02-08T18:00:00Z,Kayserispor,Kocaelispor,Kayserispor - Kocaelispor,4842500,1915472
+21,2026-02-08T18:00:00Z,Gaziantep FK,Kasımpaşa,Gaziantep FK - Kasımpaşa,4842498,1915407
+21,2026-02-08T18:00:00Z,Fenerbahçe,Gençlerbirliği,Fenerbahçe - Gençlerbirliği,4842497,1915405
+21,2026-02-08T18:00:00Z,Fatih Karagümrük,Antalyaspor,Fatih Karagümrük - Antalyaspor,4842499,1915469
+21,2026-02-08T18:00:00Z,Eyüpspor,Başakşehir,Eyüpspor - Başakşehir,4842496,1915403
+21,2026-02-08T18:00:00Z,Beşiktaş,Alanyaspor,Beşiktaş - Alanyaspor,4842495,1915401
+20,2026-02-01T18:00:00Z,Kocaelispor,Fenerbahçe,Kocaelispor - Fenerbahçe,4842494,1915462
+20,2026-02-01T18:00:00Z,Kasımpaşa,Samsunspor,Kasımpaşa - Samsunspor,4842493,1915398
+20,2026-02-01T18:00:00Z,Başakşehir,Rizespor,Başakşehir - Rizespor,4842488,1915377
+20,2026-02-01T18:00:00Z,Göztepe,Fatih Karagümrük,Göztepe - Fatih Karagümrük,4842492,1915396
+20,2026-02-01T18:00:00Z,Gençlerbirliği,Gaziantep FK,Gençlerbirliği - Gaziantep FK,4842491,1915394
+20,2026-02-01T18:00:00Z,Galatasaray,Kayserispor,Galatasaray - Kayserispor,4842490,1915391
+20,2026-02-01T18:00:00Z,Beşiktaş,Konyaspor,Beşiktaş - Konyaspor,4842489,1915385
+20,2026-02-01T18:00:00Z,Antalyaspor,Trabzonspor,Antalyaspor - Trabzonspor,4842487,1915374
+20,2026-02-01T18:00:00Z,Alanyaspor,Eyüpspor,Alanyaspor - Eyüpspor,4842486,1915371
+19,2026-01-25T18:00:00Z,Trabzonspor,Kasımpaşa,Trabzonspor - Kasımpaşa,4842485,1915368
+19,2026-01-25T18:00:00Z,Samsunspor,Kocaelispor,Samsunspor - Kocaelispor,4842484,1915365
+19,2026-01-25T18:00:00Z,Rizespor,Alanyaspor,Rizespor - Alanyaspor,4842483,1915362
+19,2026-01-25T18:00:00Z,Kayserispor,Başakşehir,Kayserispor - Başakşehir,4842482,1915359
+19,2026-01-25T18:00:00Z,Gaziantep FK,Konyaspor,Gaziantep FK - Konyaspor,4842480,1915353
+19,2026-01-25T18:00:00Z,Fenerbahçe,Göztepe,Fenerbahçe - Göztepe,4842479,1915350
+19,2026-01-25T18:00:00Z,Fatih Karagümrük,Galatasaray,Fatih Karagümrük - Galatasaray,4842481,1915356
+19,2026-01-25T18:00:00Z,Eyüpspor,Beşiktaş,Eyüpspor - Beşiktaş,4842478,1915347
+19,2026-01-25T18:00:00Z,Antalyaspor,Gençlerbirliği,Antalyaspor - Gençlerbirliği,4842477,1915340
+18,2026-01-18T18:00:00Z,Konyaspor,Eyüpspor,Konyaspor - Eyüpspor,4842476,1915337
+18,2026-01-18T18:00:00Z,Kocaelispor,Trabzonspor,Kocaelispor - Trabzonspor,4842475,1915440
+18,2026-01-18T18:00:00Z,Kasımpaşa,Antalyaspor,Kasımpaşa - Antalyaspor,4842474,1915334
+18,2026-01-18T18:00:00Z,Başakşehir,Fatih Karagümrük,Başakşehir - Fatih Karagümrük,4842469,1915421
+18,2026-01-18T18:00:00Z,Göztepe,Rizespor,Göztepe - Rizespor,4842473,1915331
+18,2026-01-18T18:00:00Z,Gençlerbirliği,Samsunspor,Gençlerbirliği - Samsunspor,4842472,1915328
+18,2026-01-18T18:00:00Z,Galatasaray,Gaziantep FK,Galatasaray - Gaziantep FK,4842471,1915325
+18,2026-01-18T18:00:00Z,Beşiktaş,Kayserispor,Beşiktaş - Kayserispor,4842470,1915322
+18,2026-01-18T18:00:00Z,Alanyaspor,Fenerbahçe,Alanyaspor - Fenerbahçe,4842468,1915419
+17,2025-12-21T18:00:00Z,Konyaspor,Kayserispor,Konyaspor - Kayserispor,4842467,1915417
+17,2025-12-21T18:00:00Z,Kocaelispor,Antalyaspor,Kocaelispor - Antalyaspor,4842466,1915429
+17,2025-12-21T18:00:00Z,Başakşehir,Gaziantep FK,Başakşehir - Gaziantep FK,4842460,1915393
+17,2025-12-21T18:00:00Z,Göztepe,Samsunspor,Göztepe - Samsunspor,4842465,1915414
+17,2025-12-21T18:00:00Z,Gençlerbirliği,Trabzonspor,Gençlerbirliği - Trabzonspor,4842464,1915412
+17,2025-12-21T18:00:00Z,Galatasaray,Kasımpaşa,Galatasaray - Kasımpaşa,4842463,1915410
+17,2025-12-21T18:00:00Z,Eyüpspor,Fenerbahçe,Eyüpspor - Fenerbahçe,4842462,1915408
+17,2025-12-21T18:00:00Z,Beşiktaş,Rizespor,Beşiktaş - Rizespor,4842461,1915400
+17,2025-12-21T18:00:00Z,Alanyaspor,Fatih Karagümrük,Alanyaspor - Fatih Karagümrük,4842459,1915389
+16,2025-12-15T17:00:00Z,Fenerbahçe,Konyaspor,Fenerbahçe - Konyaspor,4842451,1915370
+16,2025-12-14T17:00:00Z,Trabzonspor,Beşiktaş,Trabzonspor - Beşiktaş,4842458,1915387
+16,2025-12-14T17:00:00Z,Samsunspor,Başakşehir,Samsunspor - Başakşehir,4842457,1915384
+16,2025-12-14T14:00:00Z,Fatih Karagümrük,Kocaelispor,Fatih Karagümrük - Kocaelispor,4842453,1915376
+16,2025-12-14T11:30:00Z,Gaziantep FK,Göztepe,Gaziantep FK - Göztepe,4842452,1915373
+16,2025-12-13T17:00:00Z,Antalyaspor,Galatasaray,Antalyaspor - Galatasaray,4842450,1915367
+16,2025-12-13T14:00:00Z,Kayserispor,Alanyaspor,Kayserispor - Alanyaspor,4842455,1915381
+16,2025-12-13T11:30:00Z,Rizespor,Eyüpspor,Rizespor - Eyüpspor,4842456,1915382
+16,2025-12-12T17:00:00Z,Kasımpaşa,Gençlerbirliği,Kasımpaşa - Gençlerbirliği,4842454,1915379
+15,2025-12-08T17:00:00Z,Beşiktaş,Gaziantep FK,Beşiktaş - Gaziantep FK,4842443,1915349
+15,2025-12-08T17:00:00Z,Alanyaspor,Antalyaspor,Alanyaspor - Antalyaspor,4842441,1915344
+15,2025-12-07T17:00:00Z,Göztepe,Trabzonspor,Göztepe - Trabzonspor,4842447,1915361
+15,2025-12-07T14:00:00Z,Kocaelispor,Kasımpaşa,Kocaelispor - Kasımpaşa,4842448,1915579
+15,2025-12-07T11:30:00Z,Gençlerbirliği,Fatih Karagümrük,Gençlerbirliği - Fatih Karagümrük,4842446,1915358
+15,2025-12-06T17:00:00Z,Başakşehir,Fenerbahçe,Başakşehir - Fenerbahçe,4842442,1915346
+15,2025-12-06T14:00:00Z,Konyaspor,Rizespor,Konyaspor - Rizespor,4842449,1915364
+15,2025-12-06T11:30:00Z,Eyüpspor,Kayserispor,Eyüpspor - Kayserispor,4842444,1915352
+15,2025-12-05T17:00:00Z,Galatasaray,Samsunspor,Galatasaray - Samsunspor,4842445,1915355
+14,2025-12-01T17:00:00Z,Samsunspor,Alanyaspor,Samsunspor - Alanyaspor,4842439,1915339
+14,2025-12-01T17:00:00Z,Fenerbahçe,Galatasaray,Fenerbahçe - Galatasaray,4842433,1915409
+14,2025-11-30T17:00:00Z,Fatih Karagümrük,Beşiktaş,Fatih Karagümrük - Beşiktaş,4842435,1915330
+14,2025-11-30T14:00:00Z,Antalyaspor,Göztepe,Antalyaspor - Göztepe,4842432,1915406
+14,2025-11-29T17:00:00Z,Trabzonspor,Konyaspor,Trabzonspor - Konyaspor,4842440,1915342
+14,2025-11-29T17:00:00Z,Kasımpaşa,Başakşehir,Kasımpaşa - Başakşehir,4842436,1915333
+14,2025-11-29T14:00:00Z,Gaziantep FK,Eyüpspor,Gaziantep FK - Eyüpspor,4842434,1915327
+14,2025-11-29T11:30:00Z,Rizespor,Kayserispor,Rizespor - Kayserispor,4842438,1915336
+14,2025-11-28T17:00:00Z,Kocaelispor,Gençlerbirliği,Kocaelispor - Gençlerbirliği,4842437,1915578
+13,2025-11-24T17:00:00Z,Konyaspor,Antalyaspor,Konyaspor - Antalyaspor,4842430,1915402
+13,2025-11-24T17:00:00Z,Başakşehir,Trabzonspor,Başakşehir - Trabzonspor,4842424,1915388
+13,2025-11-23T17:00:00Z,Rizespor,Fenerbahçe,Rizespor - Fenerbahçe,4842431,1915404
+13,2025-11-23T14:00:00Z,Beşiktaş,Samsunspor,Beşiktaş - Samsunspor,4842425,1915390
+13,2025-11-23T14:00:00Z,Alanyaspor,Kasımpaşa,Alanyaspor - Kasımpaşa,4842423,1915386
+13,2025-11-23T11:30:00Z,Göztepe,Kocaelispor,Göztepe - Kocaelispor,4842428,1915397
+13,2025-11-22T17:00:00Z,Galatasaray,Gençlerbirliği,Galatasaray - Gençlerbirliği,4842427,1915395
+13,2025-11-22T14:00:00Z,Eyüpspor,Fatih Karagümrük,Eyüpspor - Fatih Karagümrük,4842426,1915392
+13,2025-11-22T11:30:00Z,Kayserispor,Gaziantep FK,Kayserispor - Gaziantep FK,4842429,1915399
+12,2025-11-09T17:00:00Z,Samsunspor,Eyüpspor,Samsunspor - Eyüpspor,4842421,1915380
+12,2025-11-09T17:00:00Z,Fenerbahçe,Kayserispor,Fenerbahçe - Kayserispor,4842415,1915366
+12,2025-11-09T14:00:00Z,Kocaelispor,Galatasaray,Kocaelispor - Galatasaray,4842420,1915577
+12,2025-11-09T11:30:00Z,Fatih Karagümrük,Konyaspor,Fatih Karagümrük - Konyaspor,4842418,1915375
+12,2025-11-08T17:00:00Z,Kasımpaşa,Göztepe,Kasımpaşa - Göztepe,4842419,1915378
+12,2025-11-08T17:00:00Z,Antalyaspor,Beşiktaş,Antalyaspor - Beşiktaş,4842414,1915363
+12,2025-11-08T14:00:00Z,Trabzonspor,Alanyaspor,Trabzonspor - Alanyaspor,4842422,1915383
+12,2025-11-08T11:30:00Z,Gaziantep FK,Rizespor,Gaziantep FK - Rizespor,4842416,1915369
+12,2025-11-07T17:00:00Z,Gençlerbirliği,Başakşehir,Gençlerbirliği - Başakşehir,4842417,1915372
+11,2025-11-03T17:00:00Z,Rizespor,Fatih Karagümrük,Rizespor - Fatih Karagümrük,4842413,1915360
+11,2025-11-03T17:00:00Z,Eyüpspor,Antalyaspor,Eyüpspor - Antalyaspor,4842408,1915345
+11,2025-11-03T17:00:00Z,Alanyaspor,Gaziantep FK,Alanyaspor - Gaziantep FK,4842405,1915338
+11,2025-11-02T17:00:00Z,Beşiktaş,Fenerbahçe,Beşiktaş - Fenerbahçe,4842407,1915343
+11,2025-11-02T14:00:00Z,Kayserispor,Kasımpaşa,Kayserispor - Kasımpaşa,4842411,1915354
+11,2025-11-02T11:30:00Z,Konyaspor,Samsunspor,Konyaspor - Samsunspor,4842412,1915357
+11,2025-11-01T17:00:00Z,Galatasaray,Trabzonspor,Galatasaray - Trabzonspor,4842409,1915348
+11,2025-11-01T14:00:00Z,Göztepe,Gençlerbirliği,Göztepe - Gençlerbirliği,4842410,1915351
+11,2025-10-31T17:00:00Z,Başakşehir,Kocaelispor,Başakşehir - Kocaelispor,4842406,1915341
+10,2025-10-27T17:00:00Z,Samsunspor,Rizespor,Samsunspor - Rizespor,4842403,1915332
+10,2025-10-27T17:00:00Z,Gaziantep FK,Fenerbahçe,Gaziantep FK - Fenerbahçe,4842398,1915575
+10,2025-10-26T17:00:00Z,Kasımpaşa,Beşiktaş,Kasımpaşa - Beşiktaş,4842401,1915329
+10,2025-10-26T14:00:00Z,Gençlerbirliği,Konyaspor,Gençlerbirliği - Konyaspor,4842399,1915323
+10,2025-10-26T14:00:00Z,Galatasaray,Göztepe,Galatasaray - Göztepe,4842397,1915574
+10,2025-10-26T11:30:00Z,Antalyaspor,Başakşehir,Antalyaspor - Başakşehir,4842396,1915573
+10,2025-10-25T17:00:00Z,Trabzonspor,Eyüpspor,Trabzonspor - Eyüpspor,4842404,1915335
+10,2025-10-25T14:00:00Z,Kocaelispor,Alanyaspor,Kocaelispor - Alanyaspor,4842402,1915576
+10,2025-10-24T17:00:00.000Z,Fatih Karagümrük,Kayserispor,Fatih Karagümrük - Kayserispor,4842400,1915326
+3,2025-10-22T17:00:00Z,Rizespor,Başakşehir,Rizespor - Başakşehir,4842339,1915291
+3,2025-10-22T17:00:00Z,Konyaspor,Beşiktaş,Konyaspor - Beşiktaş,4842338,1915288
+9,2025-10-20T17:00:00Z,Eyüpspor,Kasımpaşa,Eyüpspor - Kasımpaşa,4842390,1915567
+9,2025-10-19T17:00:00Z,Fenerbahçe,Fatih Karagümrük,Fenerbahçe - Fatih Karagümrük,4842391,1915568
+9,2025-10-19T14:00:00Z,Gaziantep FK,Antalyaspor,Gaziantep FK - Antalyaspor,4842392,1915569
+9,2025-10-19T14:00:00Z,Alanyaspor,Göztepe,Alanyaspor - Göztepe,4842387,1915564
+9,2025-10-19T11:30:00Z,Kayserispor,Samsunspor,Kayserispor - Samsunspor,4842393,1915570
+9,2025-10-18T17:00:00Z,Başakşehir,Galatasaray,Başakşehir - Galatasaray,4842388,1915565
+9,2025-10-18T14:00:00Z,Rizespor,Trabzonspor,Rizespor - Trabzonspor,4842395,1915572
+9,2025-10-18T14:00:00Z,Beşiktaş,Gençlerbirliği,Beşiktaş - Gençlerbirliği,4842389,1915566
+9,2025-10-18T11:30:00Z,Konyaspor,Kocaelispor,Konyaspor - Kocaelispor,4842394,1915571
+8,2025-10-05T17:00:00Z,Samsunspor,Fenerbahçe,Samsunspor - Fenerbahçe,4842385,1915562
+8,2025-10-05T17:00:00Z,Göztepe,Başakşehir,Göztepe - Başakşehir,4842381,1915555
+8,2025-10-05T14:00:00Z,Fatih Karagümrük,Gaziantep FK,Fatih Karagümrük - Gaziantep FK,4842382,1915557
+8,2025-10-05T11:30:00Z,Kasımpaşa,Konyaspor,Kasımpaşa - Konyaspor,4842383,1915558
+8,2025-10-04T17:00:00Z,Galatasaray,Beşiktaş,Galatasaray - Beşiktaş,4842379,1915552
+8,2025-10-04T14:00:00Z,Kocaelispor,Eyüpspor,Kocaelispor - Eyüpspor,4842384,1915560
+8,2025-10-04T11:30:00Z,Gençlerbirliği,Alanyaspor,Gençlerbirliği - Alanyaspor,4842380,1915554
+8,2025-10-03T17:00:00Z,Trabzonspor,Kayserispor,Trabzonspor - Kayserispor,4842386,1915563
+8,2025-10-03T17:00:00Z,Antalyaspor,Rizespor,Antalyaspor - Rizespor,4842378,1915551
+7,2025-09-29T17:00:00Z,Beşiktaş,Kocaelispor,Beşiktaş - Kocaelispor,4842370,1915315
+7,2025-09-28T17:00:00Z,Kayserispor,Gençlerbirliği,Kayserispor - Gençlerbirliği,4842375,1915544
+7,2025-09-28T17:00:00Z,Fenerbahçe,Antalyaspor,Fenerbahçe - Antalyaspor,4842372,1915320
+7,2025-09-28T14:00:00Z,Rizespor,Kasımpaşa,Rizespor - Kasımpaşa,4842377,1915548
+7,2025-09-28T14:00:00Z,Konyaspor,Başakşehir,Konyaspor - Başakşehir,4842376,1915546
+7,2025-09-27T17:00:00Z,Fatih Karagümrük,Trabzonspor,Fatih Karagümrük - Trabzonspor,4842374,1915542
+7,2025-09-27T14:00:00Z,Gaziantep FK,Samsunspor,Gaziantep FK - Samsunspor,4842373,1915541
+7,2025-09-27T14:00:00Z,Eyüpspor,Göztepe,Eyüpspor - Göztepe,4842371,1915318
+7,2025-09-26T17:00:00Z,Alanyaspor,Galatasaray,Alanyaspor - Galatasaray,4842369,1915313
+1,2025-09-24T17:00:00Z,Kayserispor,Beşiktaş,Kayserispor - Beşiktaş,4842320,1915279
+6,2025-09-22T17:00:00Z,Galatasaray,Konyaspor,Galatasaray - Konyaspor,4842362,1915324
+6,2025-09-21T17:00:00Z,Samsunspor,Fatih Karagümrük,Samsunspor - Fatih Karagümrük,4842367,1915307
+6,2025-09-21T17:00:00Z,Kasımpaşa,Fenerbahçe,Kasımpaşa - Fenerbahçe,4842365,1915294
+6,2025-09-21T14:00:00Z,Kocaelispor,Rizespor,Kocaelispor - Rizespor,4842366,1915297
+6,2025-09-21T14:00:00Z,Başakşehir,Alanyaspor,Başakşehir - Alanyaspor,4842361,1915316
+6,2025-09-20T17:00:00Z,Trabzonspor,Gaziantep FK,Trabzonspor - Gaziantep FK,4842368,1915310
+6,2025-09-20T17:00:00Z,Antalyaspor,Kayserispor,Antalyaspor - Kayserispor,4842360,1915312
+6,2025-09-20T14:00:00Z,Gençlerbirliği,Eyüpspor,Gençlerbirliği - Eyüpspor,4842363,1915289
+6,2025-09-19T17:00:00Z,Göztepe,Beşiktaş,Göztepe - Beşiktaş,4842364,1915292
+3,2025-09-17T17:00:00Z,Samsunspor,Kasımpaşa,Samsunspor - Kasımpaşa,4842340,1915296
+1,2025-09-17T17:00:00Z,Fenerbahçe,Alanyaspor,Fenerbahçe - Alanyaspor,4842317,1915276
+1,2025-09-17T17:00:00Z,Fatih Karagümrük,Başakşehir,Fatih Karagümrük - Başakşehir,4842319,1915278
+5,2025-09-15T17:00:00Z,Rizespor,Gençlerbirliği,Rizespor - Gençlerbirliği,4842358,1915306
+5,2025-09-14T16:00:00Z,Gaziantep FK,Kocaelispor,Gaziantep FK - Kocaelispor,4842354,1915298
+5,2025-09-14T16:00:00Z,Fenerbahçe,Trabzonspor,Fenerbahçe - Trabzonspor,4842353,1915295
+5,2025-09-14T14:00:00Z,Kayserispor,Göztepe,Kayserispor - Göztepe,4842356,1915302
+5,2025-09-13T17:00:00Z,Konyaspor,Alanyaspor,Konyaspor - Alanyaspor,4842357,1915304
+5,2025-09-13T17:00:00Z,Beşiktaş,Başakşehir,Beşiktaş - Başakşehir,4842351,1915290
+5,2025-09-13T14:00:00Z,Samsunspor,Antalyaspor,Samsunspor - Antalyaspor,4842359,1915309
+5,2025-09-13T14:00:00Z,Fatih Karagümrük,Kasımpaşa,Fatih Karagümrük - Kasımpaşa,4842355,1915300
+5,2025-09-13T14:00:00Z,Eyüpspor,Galatasaray,Eyüpspor - Galatasaray,4842352,1915293
+4,2025-08-31T18:30:00Z,Trabzonspor,Samsunspor,Trabzonspor - Samsunspor,4842350,1915321
+4,2025-08-31T18:30:00Z,Alanyaspor,Beşiktaş,Alanyaspor - Beşiktaş,4842342,1915301
+4,2025-08-31T16:00:00Z,Başakşehir,Eyüpspor,Başakşehir - Eyüpspor,4842344,1915305
+4,2025-08-31T16:00:00Z,Gençlerbirliği,Fenerbahçe,Gençlerbirliği - Fenerbahçe,4842346,1915311
+4,2025-08-30T18:30:00Z,Galatasaray,Rizespor,Galatasaray - Rizespor,4842345,1915308
+4,2025-08-30T18:30:00Z,Antalyaspor,Fatih Karagümrük,Antalyaspor - Fatih Karagümrük,4842343,1915303
+4,2025-08-30T16:00:00Z,Kocaelispor,Kayserispor,Kocaelispor - Kayserispor,4842349,1915319
+4,2025-08-30T16:00:00Z,Kasımpaşa,Gaziantep FK,Kasımpaşa - Gaziantep FK,4842348,1915317
+4,2025-08-29T18:30:00Z,Göztepe,Konyaspor,Göztepe - Konyaspor,4842347,1915314
+3,2025-08-25T16:00:00Z,Eyüpspor,Alanyaspor,Eyüpspor - Alanyaspor,4842333,1915550
+3,2025-08-24T18:30:00Z,Kayserispor,Galatasaray,Kayserispor - Galatasaray,4842337,1915561
+3,2025-08-24T16:00:00Z,Trabzonspor,Antalyaspor,Trabzonspor - Antalyaspor,4842341,1915299
+3,2025-08-23T18:30:00Z,Gaziantep FK,Gençlerbirliği,Gaziantep FK - Gençlerbirliği,4842335,1915556
+3,2025-08-23T18:30:00Z,Fenerbahçe,Kocaelispor,Fenerbahçe - Kocaelispor,4842334,1915553
+3,2025-08-22T18:30:00Z,Fatih Karagümrük,Göztepe,Fatih Karagümrük - Göztepe,4842336,1915559
+2,2025-08-18T18:30:00Z,Kasımpaşa,Trabzonspor,Kasımpaşa - Trabzonspor,4842330,1915545
+2,2025-08-17T18:30:00Z,Başakşehir,Kayserispor,Başakşehir - Kayserispor,4842325,1915284
+2,2025-08-17T18:30:00Z,Beşiktaş,Eyüpspor,Beşiktaş - Eyüpspor,4842326,1915285
+2,2025-08-17T16:00:00Z,Konyaspor,Gaziantep FK,Konyaspor - Gaziantep FK,4842332,1915549
+2,2025-08-17T16:00:00Z,Gençlerbirliği,Antalyaspor,Gençlerbirliği - Antalyaspor,4842328,1915287
+2,2025-08-16T18:30:00Z,Göztepe,Fenerbahçe,Göztepe - Fenerbahçe,4842329,1915543
+2,2025-08-16T18:30:00Z,Alanyaspor,Rizespor,Alanyaspor - Rizespor,4842324,1915283
+2,2025-08-16T16:00:00Z,Kocaelispor,Samsunspor,Kocaelispor - Samsunspor,4842331,1915547
+2,2025-08-15T18:30:00Z,Galatasaray,Fatih Karagümrük,Galatasaray - Fatih Karagümrük,4842327,1915286
+1,2025-08-11T18:30:00Z,Trabzonspor,Kocaelispor,Trabzonspor - Kocaelispor,4842323,1915282
+1,2025-08-10T18:30:00Z,Eyüpspor,Konyaspor,Eyüpspor - Konyaspor,4842316,1915275
+1,2025-08-10T16:00:00Z,Rizespor,Göztepe,Rizespor - Göztepe,4842321,1915280
+1,2025-08-09T18:30:00Z,Antalyaspor,Kasımpaşa,Antalyaspor - Kasımpaşa,4842315,1915274
+1,2025-08-09T16:00:00Z,Samsunspor,Gençlerbirliği,Samsunspor - Gençlerbirliği,4842322,1915281
+1,2025-08-08T18:30:00Z,Gaziantep FK,Galatasaray,Gaziantep FK - Galatasaray,4842318,1915277
