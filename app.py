@@ -201,7 +201,7 @@ div[data-testid="stDownloadButton"] > button:active {
 
 @st.cache_data(show_spinner=False)
 def get_all_played_matches_cached():
-    return get_finished_matches()
+    return get_finished_matches()  # DataFrame döndürmeli
 
 @st.cache_data(show_spinner=False)
 def generate_match_fig(whoscored_match_id, fotmob_match_id):
@@ -211,13 +211,14 @@ with st.sidebar:
     with st.spinner("📊 Maçlar yükleniyor..."):
         matches = get_all_played_matches_cached()
 
-if matches:   
+if not matches.empty: 
     if "selected_match" not in st.session_state:
-        st.session_state.selected_match = matches[0]
-        
+        st.session_state.selected_match = matches.iloc[0]
+
+    # selectbox için DataFrame -> dict list
     selected_match = st.sidebar.selectbox(
         "Maç Seç",
-        options=matches,
+        options=matches.to_dict("records"),
         format_func=lambda m: f"{m['homeName']} vs {m['awayName']}"
     )
     st.session_state.selected_match = selected_match
@@ -232,20 +233,16 @@ if matches:
     if whoscored_match_id:
         fotmob_match_id = selected_match['fotmobId']
         if fotmob_match_id:
-            # --- Rapor figürünü al ---
-            # --- Yükleniyor göstergesi ---
             with st.spinner("📊 Maç raporu hazırlanıyor..."):
                 fig = generate_match_fig(whoscored_match_id, fotmob_match_id)
 
             if fig:
-                # --- PNG formatına çevir ---
                 buf = io.BytesIO()
                 fig.savefig(buf, format="png", bbox_inches="tight", dpi=100)
                 buf.seek(0)
 
                 img_data = base64.b64encode(buf.getvalue()).decode()
 
-                # --- Streamlit'te küçük gösterim ---
                 html_code = f"""
                 <div style="text-align:center;">
                     <img src="data:image/png;base64,{img_data}" 
@@ -269,9 +266,7 @@ if matches:
                     mime="image/png"
                 )
 
-                # --- Bellek temizliği ---
                 plt.close("all")
-            
         else:
             st.warning("FotMob maç ID'si bulunamadı.")
 else:
@@ -333,4 +328,3 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
-
