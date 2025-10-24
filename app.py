@@ -242,7 +242,7 @@ if not matches.empty:
 
             if fig:
                 buf = io.BytesIO()
-                fig.savefig(buf, format="png", bbox_inches="tight", dpi=100)
+                fig.savefig(buf, format="png", bbox_inches="tight")
                 buf.seek(0)
 
                 img_data = base64.b64encode(buf.getvalue()).decode()
@@ -332,6 +332,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
