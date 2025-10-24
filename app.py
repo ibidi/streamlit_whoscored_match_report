@@ -135,6 +135,10 @@ st.markdown(
                 width: 1000px;
                 max-width: 1000px;
             }
+            [data-testid="stSidebar"] {
+                width: 450px !important;
+                min-width: 450px !important;
+            }
         }
 
         /* Tabletler için (genellikle 768px - 1024px arası ekran genişliği) */
@@ -154,18 +158,6 @@ st.markdown(
                 padding-right: 10px;
             }
         }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <style>
-    [data-testid="stSidebar"] {
-        width: 350px !important;
-        min-width: 350px !important;
-    }
     </style>
     """,
     unsafe_allow_html=True
@@ -340,6 +332,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
