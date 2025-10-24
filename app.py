@@ -63,7 +63,7 @@ def find_last_finished_fotmob_match():
 last_finished_fotmob_match_id = find_last_finished_fotmob_match()
 
 def get_finished_matches():
-    df_matches = pd.read_csv("super_lig_match_program.csv")
+    df_matches = pd.read_csv("https://raw.githubusercontent.com/bariscanyeksin/streamlit_whoscored_match_report/refs/heads/main/super_lig_match_program.csv")
 
     target_idx = df_matches.index[df_matches['fotmobId'] == last_finished_fotmob_match_id]
 
@@ -333,3 +333,4 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
