@@ -154,11 +154,18 @@ st.markdown(
                 padding-right: 10px;
             }
         }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-        section[data-testid="stSidebar"] {{
-            width: 350px !important;
-            min-width: 350px !important;
-        }}
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] {
+        width: 350px !important;
+        min-width: 350px !important;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -333,6 +340,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
