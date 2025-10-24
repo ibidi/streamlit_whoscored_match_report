@@ -203,19 +203,23 @@ div[data-testid="stDownloadButton"] > button:active {
 </style>
 """, unsafe_allow_html=True)
 
+# --- Cache’lenmiş fonksiyonlar ---
 @st.cache_data(show_spinner=False)
 def get_all_played_matches_cached():
     return get_finished_matches()  # DataFrame döndürmeli
 
 @st.cache_data(show_spinner=False)
 def generate_match_fig(whoscored_match_id, fotmob_match_id):
-    return whoscored_match_report(whoscored_match_id, fotmob_match_id)
-    
+    fig = whoscored_match_report(whoscored_match_id, fotmob_match_id)
+    plt.close(fig)  # Bellek temizliği
+    return fig
+
+# --- Sidebar ve seçim ---
 with st.sidebar:
     with st.spinner("📊 Maçlar yükleniyor..."):
         matches = get_all_played_matches_cached()
 
-if not matches.empty: 
+if not matches.empty:
     if "selected_match" not in st.session_state:
         st.session_state.selected_match = matches.iloc[0]
 
@@ -226,14 +230,14 @@ if not matches.empty:
         format_func=lambda m: f"{m['week']}. Hafta | {m['homeName']}-{m['awayName']}"
     )
     st.session_state.selected_match = selected_match
-    
+
     homeTeamName = selected_match['homeName']
     awayTeamName = selected_match['awayName']
     formatted_date = datetime.strptime(
         selected_match['utcTime'], "%Y-%m-%dT%H:%M:%SZ"
     ).strftime("%d-%m-%Y")
     whoscored_match_id = selected_match['whoscoredId']
-    
+
     if whoscored_match_id:
         fotmob_match_id = selected_match['fotmobId']
         if fotmob_match_id:
@@ -242,11 +246,12 @@ if not matches.empty:
 
             if fig:
                 buf = io.BytesIO()
+                fig.set_dpi(80)  # RAM ve PNG boyutu optimize
                 fig.savefig(buf, format="png", bbox_inches="tight")
                 buf.seek(0)
 
+                # Base64 ile görüntü gösterim
                 img_data = base64.b64encode(buf.getvalue()).decode()
-
                 html_code = f"""
                 <div style="text-align:center;">
                     <img src="data:image/png;base64,{img_data}" 
@@ -255,12 +260,12 @@ if not matches.empty:
                 </div>
                 """
                 st.markdown(html_code, unsafe_allow_html=True)
-                
+
+                # Dosya ismi
                 homeTeamName_replaced = str(homeTeamName).replace(' ', '_')
                 awayTeamName_replaced = str(awayTeamName).replace(' ', '_')
                 match_name_replaced = f"{homeTeamName_replaced}_{awayTeamName_replaced}"
                 date_replaced = formatted_date.replace('.', '_')
-                    
                 file_name = f"{match_name_replaced}_{date_replaced}_Maç_Raporu.png"
 
                 st.download_button(
@@ -270,7 +275,6 @@ if not matches.empty:
                     mime="image/png"
                 )
 
-                plt.close("all")
         else:
             st.warning("FotMob maç ID'si bulunamadı.")
 else:
@@ -332,6 +336,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
