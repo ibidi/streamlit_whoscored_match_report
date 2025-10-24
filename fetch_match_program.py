@@ -42,46 +42,59 @@ def get_whoscored_matches_by_months():
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=True,
-            args=["--disable-gpu", "--no-sandbox"]
+            args=[
+                "--disable-blink-features=AutomationControlled",
+                "--disable-dev-shm-usage",
+                "--disable-gpu",
+                "--no-sandbox",
+                "--disable-software-rasterizer",
+                "--disable-web-security",
+                "--disable-features=IsolateOrigins,site-per-process"
+            ],
         )
+
         context = browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/120.0.0.0 Safari/537.36"
+                "Chrome/123.0.0.0 Safari/537.36"
             ),
-            viewport={"width": 1280, "height": 900},
-            locale="tr-TR"
+            locale="tr-TR",
+            timezone_id="Europe/Istanbul",
+            viewport={"width": 1366, "height": 768},
+            extra_http_headers={
+                "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.8",
+                "Sec-Fetch-Site": "same-origin",
+                "Sec-Fetch-Mode": "cors",
+                "Sec-Fetch-Dest": "empty",
+                "Referer": page_url,
+                "Origin": "https://www.whoscored.com"
+            },
         )
 
         page = context.new_page()
+        page.goto(page_url, wait_until="domcontentloaded", timeout=60000)
 
-        def handle_response(response):
-            url = response.url
-            if "/tournaments/24627/data/?d=" in url:
-                try:
-                    data = response.json()
-                    matches = data["tournaments"][0]["matches"]
-                    for m in matches:
-                        if m.get("homeScore") is not None:
-                            collected.append(m)
-                except:
-                    pass
+        # Cloudflare challenge cookie bekle
+        page.wait_for_timeout(15000)
 
-        page.on("response", handle_response)
-
-        page.goto(page_url, wait_until="networkidle", timeout=60000)
-        page.wait_for_timeout(6000)  # ✅ Cloudflare cookie süresi
-
+        # API istekleri
         for ym in months:
             api_url = f"https://www.whoscored.com/tournaments/24627/data/?d={ym}&isAggregate=false"
-            page.evaluate(f"fetch('{api_url}')")
-            page.wait_for_timeout(1200)
+            resp = context.request.get(api_url)
+            try:
+                data = resp.json()
+                matches = data["tournaments"][0]["matches"]
+                for m in matches:
+                    if m.get("homeScore") is not None:
+                        collected.append(m)
+            except:
+                pass
+            page.wait_for_timeout(400)
 
         browser.close()
 
     return collected
-
 
 # -----------------------
 # FotMob Fetch
