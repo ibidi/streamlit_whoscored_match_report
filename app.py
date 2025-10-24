@@ -1,89 +1,16 @@
 import streamlit as st
-import cloudscraper
 import requests
 from get_fotmob_headers import headers_leagues
-from thefuzz import fuzz
 from whoscored_match_report import whoscored_match_report
 import io
 import matplotlib.pyplot as plt
 import base64
 from datetime import datetime
-from dateutil import parser
-from playwright.sync_api import sync_playwright
-import subprocess
-import json
-import re
+import pandas as pd
 
 # -----------------------
 # Yardımcı Fonksiyonlar
 # -----------------------
-
-def fetch_matches_by_month_playwright(year_month: str):
-    url = f"https://www.whoscored.com/tournaments/24627/data/?d={year_month}&isAggregate=false"
-
-    try:
-        with sync_playwright() as p:
-            browser = p.firefox.launch(headless=False)
-            context = browser.new_context(
-                user_agent=(
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) "
-                    "Chrome/111.0.0.0 Safari/537.36"
-                )
-            )
-            page = context.new_page()
-            page.goto(url, wait_until="networkidle")
-
-            # JS render edilmiş content çek
-            content = page.content()
-            browser.close()
-
-        # JSON'u script tag'inden çek
-        # WhoScored data genelde window.__data=... formatında
-        match = re.search(r"({.*})", content, re.DOTALL)
-        if not match:
-            return []
-
-        data = json.loads(match.group(1))
-
-        if not data.get("tournaments"):
-            return []
-        return data["tournaments"][0].get("matches", [])
-
-    except Exception as e:
-        st.write(f"[Playwright fetch error] {e}")
-        return []
-
-
-def get_all_played_matches():
-    months = [
-        "202508","202509","202510","202511","202512",
-        "202601","202602","202603","202604","202605"
-    ]
-
-    all_matches = []
-    stop = False
-
-    for ym in months:
-        matches = fetch_matches_by_month_playwright(ym)
-        if not matches:
-            continue
-
-        for m in matches:
-            # Eğer maç oynanmamışsa, döngüyü durdur (fonksiyonu hemen return etme)
-            if m.get("homeScore") is None:
-                stop = True
-                break
-            all_matches.append(m)
-
-        if stop:
-            break
-
-    all_matches.sort(
-        key=lambda x: parser.parse(x.get("startTimeUtc") or x.get("startTime")),
-        reverse=True
-    )
-    return all_matches
 
 def normalize_team_name(name):
     """WhoScored isimlerini Türkçe karakterli hale getirir ve küçük harfe çevirir"""
@@ -106,8 +33,8 @@ def normalize_team_name(name):
     name = name.replace("kocaelispor", "kocaelispor")
     return name.strip()
 
-def find_fotmob_match(whoscored_match):
-    """WhoScored maçına denk gelen FotMob maçını bul"""
+def find_last_finished_fotmob_match():
+    """FotMob: Son bitmiş maçın matchId'sini döndür"""
     try:
         resp = requests.get(
             "https://www.fotmob.com/api/data/leagues?id=71&ccode3=TUR",
@@ -117,29 +44,37 @@ def find_fotmob_match(whoscored_match):
         data = resp.json()
         all_matches = data.get("matches", {}).get("allMatches", [])
 
-        # WhoScored zamanını UTC'ye çevir
-        ws_time = whoscored_match["startTimeUtc"]
-        ws_home = normalize_team_name(whoscored_match["homeTeamName"])
-        ws_away = normalize_team_name(whoscored_match["awayTeamName"])
+        # Bitmiş maçları filtrele
+        finished = [m for m in all_matches if m.get("status", {}).get("finished")]
 
-        for m in all_matches:
-            fm_time = m["status"]["utcTime"]
-            if fm_time != ws_time:
-                continue
+        if not finished:
+            return None
 
-            fm_home = m["home"]["name"].lower()
-            fm_away = m["away"]["name"].lower()
+        # startDate'e göre sırala (en son bitmiş maçı seç)
+        latest = sorted(finished, key=lambda m: m.get("startDate", ""))[-1]
 
-            home_score = fuzz.ratio(ws_home, fm_home)
-            away_score = fuzz.ratio(ws_away, fm_away)
+        # matchId döndür
+        return int(latest.get("id"))
 
-            if home_score >= 85 and away_score >= 85:
-                return m["id"]
-
-        return None
     except Exception as e:
         st.error(f"FotMob maç arama hatası: {e}")
         return None
+
+last_finished_fotmob_match_id = find_last_finished_fotmob_match()
+
+def get_finished_matches():
+    df_matches = pd.read_csv("super_lig_match_program.csv")
+
+    target_idx = df_matches.index[df_matches['fotmobId'] == last_finished_fotmob_match_id]
+
+    if len(target_idx) == 0:
+        st.error("Bu fotmobId CSV'de bulunamadı!")
+        df_filtered = pd.DataFrame()
+    else:
+        start_idx = target_idx[0]
+        df_filtered = df_matches.iloc[start_idx:]
+
+    return df_filtered
 
 # -----------------------
 # Streamlit Arayüzü
@@ -266,7 +201,7 @@ div[data-testid="stDownloadButton"] > button:active {
 
 @st.cache_data(show_spinner=False)
 def get_all_played_matches_cached():
-    return get_all_played_matches()
+    return get_finished_matches()
 
 @st.cache_data(show_spinner=False)
 def generate_match_fig(whoscored_match_id, fotmob_match_id):
@@ -283,19 +218,19 @@ if matches:
     selected_match = st.sidebar.selectbox(
         "Maç Seç",
         options=matches,
-        format_func=lambda m: f"{m['homeTeamName']} vs {m['awayTeamName']}"
+        format_func=lambda m: f"{m['homeName']} vs {m['awayName']}"
     )
     st.session_state.selected_match = selected_match
     
-    homeTeamName = selected_match['homeTeamName']
-    awayTeamName = selected_match['awayTeamName']
+    homeTeamName = selected_match['homeName']
+    awayTeamName = selected_match['awayName']
     formatted_date = datetime.strptime(
-        selected_match['startTimeUtc'], "%Y-%m-%dT%H:%M:%SZ"
+        selected_match['utcTime'], "%Y-%m-%dT%H:%M:%SZ"
     ).strftime("%d-%m-%Y")
-    whoscored_match_id = selected_match['id']
+    whoscored_match_id = selected_match['whoscoredId']
     
     if whoscored_match_id:
-        fotmob_match_id = find_fotmob_match(selected_match)
+        fotmob_match_id = selected_match['fotmobId']
         if fotmob_match_id:
             # --- Rapor figürünü al ---
             # --- Yükleniyor göstergesi ---
@@ -398,21 +333,3 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
