@@ -155,9 +155,9 @@ st.markdown(
             }
         }
 
-        [data-testid="stSidebar"] {{
-            width: 350px; !important
-            min-width: 350px; !important
+        section[data-testid="stSidebar"] {{
+            width: 350px !important;
+            min-width: 350px !important;
         }}
     </style>
     """,
@@ -333,6 +333,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 
 )
+
 
 
 
