@@ -1187,13 +1187,13 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
         bottom_y = 5
 
         ax.scatter(x_center-x_margin, bottom_y, s=750, marker='o', color=homeColor, zorder=3)
-        ax.text(x_center-x_margin, bottom_y-text_y_margin, f'{len(hleft)}', fontsize=20, fontproperties=prop, fontweight='bold', color=pitch_color, ha='center', va='center')
+        ax.text(x_center-x_margin, bottom_y-text_y_margin, f'{len(hrigt)}', fontsize=20, fontproperties=prop, fontweight='bold', color=pitch_color, ha='center', va='center')
         
         ax.scatter(x_center-x_margin, y_center, s=750, marker='o', color=homeColor, zorder=3)
         ax.text(x_center-x_margin, y_center-text_y_margin, f'{len(hcent)}', fontsize=20, fontproperties=prop, fontweight='bold', color=pitch_color, ha='center', va='center')
         
         ax.scatter(x_center-x_margin, top_y, s=750, marker='o', color=homeColor, zorder=3)
-        ax.text(x_center-x_margin, top_y-text_y_margin, f'{len(hrigt)}', fontsize=20, fontproperties=prop, fontweight='bold', color=pitch_color, ha='center', va='center')
+        ax.text(x_center-x_margin, top_y-text_y_margin, f'{len(hleft)}', fontsize=20, fontproperties=prop, fontweight='bold', color=pitch_color, ha='center', va='center')
 
 
         ax.scatter(x_center+x_margin, bottom_y, s=750, marker='o', color=awayColor, zorder=3)
@@ -1310,13 +1310,15 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
         ax.axvline(x=dah, color='gray', linestyle='--', alpha=0.75, linewidth=2)
 
         # Defense line Defensive Actions Height
-        center_backs_height = average_locs_and_count_df[average_locs_and_count_df['position']=='DC']
-        def_line_h = round(center_backs_height['x'].median(), 2)
+        center_backs_height = average_locs_and_count_df[average_locs_and_count_df['isFirstEleven']==1]
+        center_backs_height = center_backs_height.sort_values(by='x', ascending=True)
+        center_backs_height = center_backs_height.head(1)
+        def_line_h = round(center_backs_height['x'].mean(), 2)
         ax.axvline(x=def_line_h, color='gray', linestyle='dotted', alpha=0.5, linewidth=2)
         # Forward line Defensive Actions Height
         Forwards_height = average_locs_and_count_df[average_locs_and_count_df['isFirstEleven']==1]
         Forwards_height = Forwards_height.sort_values(by='x', ascending=False)
-        Forwards_height = Forwards_height.head(2)
+        Forwards_height = Forwards_height.head(1)
         fwd_line_h = round(Forwards_height['x'].mean(), 2)
         ax.axvline(x=fwd_line_h, color='gray', linestyle='dotted', alpha=0.5, linewidth=2)
 
@@ -1328,9 +1330,9 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
             # inverting the axis for away team
             ax.invert_xaxis()
             ax.invert_yaxis()
-            ax.text(dah-1, 73, f"{dah_show}m", fontsize=12, fontproperties=prop, color=line_color, ha='left', va='center')
+            ax.text(dah-1, 73, f"{dah_show}m", fontsize=12, fontproperties=prop, color=line_color, ha='center', va='center')
         else:
-            ax.text(dah-1, -5, f"{dah_show}m", fontsize=12, fontproperties=prop, color=line_color, ha='right', va='center')
+            ax.text(dah-1, -5, f"{dah_show}m", fontsize=12, fontproperties=prop, color=line_color, ha='center', va='center')
             
         endnote = "Veri: WhoScored & FotMob\n@adnaaan433 projesinden ilham alındı"
 
@@ -1468,6 +1470,7 @@ def whoscored_match_report(whoscored_match_id, fotmob_match_id, fotmob_league_id
     
 
     return final_fig
+
 
 
 
